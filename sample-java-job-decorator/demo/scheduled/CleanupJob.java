@@ -1,6 +1,6 @@
 package demo.scheduled;
 
-import org.eclipse.dirigible.engine.java.annotations.Scheduled;
+import org.eclipse.dirigible.sdk.job.Scheduled;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
