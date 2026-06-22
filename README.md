@@ -20,8 +20,9 @@ registers the Quartz job, and it starts firing on the declared cron expression i
 
 ## Job styles
 
-- **Reflective** — `CleanupJob` (a `@Scheduled` class with a `run()` method by name).
-- **Strong interface** — `ReportJob implements JobHandler` (compile-checked `run()`).
-- **Method-level annotation** — `Maintenance`, a `@Component` bean with `@Scheduled`-annotated methods (Spring style).
+Two ways to write a Java job — pick one per `@Component` class (never both), like Spring:
+
+- **Strong interface** — `CleanupJob` is a `@Component` that implements `JobHandler` and supplies its own `cron()` (like `org.quartz.Job`); no `@Scheduled` annotation.
+- **Method-level annotation** — `Maintenance` is a `@Component` with `@Scheduled`-annotated methods (Spring `@Scheduled`-on-a-method style).
 
 See the [Develop guide](https://www.dirigible.io/help/develop/scheduled-jobs/) and the [Java SDK](https://www.dirigible.io/sdk/).
