@@ -14,7 +14,7 @@ public class Maintenance {
 
     private static final Logger LOGGER = LoggerFactory.getLogger("app.out");
 
-    @Scheduled(expression = "0/45 * * * * ?")
+    @Scheduled(expression = "0/2 * * * * ?")
     public void purgeTempFiles() {
         LOGGER.info("Maintenance.purgeTempFiles executed (method-level @Scheduled)!");
     }
